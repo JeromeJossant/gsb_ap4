@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medecin_gsb/model/medecin.dart';
+import 'package:gsb_ap4/model/medecin.dart';
 
 part 'specialite_complementaire.g.dart';
 

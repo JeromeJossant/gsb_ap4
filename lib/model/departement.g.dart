@@ -10,7 +10,9 @@ Departement _$DepartementFromJson(Map<String, dynamic> json) => Departement(
       id: json['id'] as int,
       nom: json['nom'] as String,
       num: json['num'] as String,
-      pays: json['pays'],
+      pays: json['pays'] == null
+          ? null
+          : Pays.fromJson(json['pays'] as Map<String, dynamic>),
       medecins: (json['medecins'] as List<dynamic>?)
           ?.map((e) => Medecin.fromJson(e as Map<String, dynamic>))
           .toList(),

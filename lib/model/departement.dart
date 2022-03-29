@@ -1,5 +1,5 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:medecin_gsb/model/pays.dart';
+import 'package:gsb_ap4/model/pays.dart';
 
 import 'medecin.dart';
 part 'departement.g.dart';

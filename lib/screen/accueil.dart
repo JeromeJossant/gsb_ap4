@@ -1,3 +1,11 @@
+import 'package:flutter/material.dart';
+import 'package:gsb_ap4/main.dart';
+import 'package:gsb_ap4/screen/pays.dart';
+import '../main.dart';
+import 'departements.dart';
+import 'medecinSearch.dart';
+import 'medecins.dart';
+
 class Main extends StatefulWidget {
   const Main({Key? key}) : super(key: key);
 
@@ -27,9 +35,8 @@ class _Main extends State<Main> {
           });
         },
         children: const <Widget>[
-          MedecinsEcran(),
-          SearchScreen(),
-          DepartementScreen(),
+          MedecinsScreen(),
+          DepartementsScreen(),
           PaysScreen()
         ],
       ),
@@ -55,7 +62,6 @@ class _Main extends State<Main> {
             label: "Pays",
           ),
         ],
-        fixedColor: kPrimaryColor,
         unselectedItemColor: Colors.black38,
         backgroundColor: Colors.white,
       ),
