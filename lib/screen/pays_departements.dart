@@ -5,6 +5,7 @@ import 'package:http/http.dart' as http;
 import 'package:gsb_ap4/model/departement.dart';
 import 'package:gsb_ap4/model/pays.dart';
 import 'package:gsb_ap4/service/service.dart';
+import 'medecins_departements.dart';
 
 
 class PaysDepScreen extends StatefulWidget {
@@ -38,6 +39,9 @@ class _PaysDepScreenState extends State<PaysDepScreen> {
                         itemBuilder: (context, i) {
                           return ListTile(
                             title: Text(snapshot.data![i].num+" - "+snapshot.data![i].nom),
+                            onTap: (){
+                              Navigator.pushNamed(context, MedecinsDepScreen.routeName, arguments: Service().getMedecinByDepartement(snapshot.data![i]));
+                            },
                           );
                         });
                   }}),

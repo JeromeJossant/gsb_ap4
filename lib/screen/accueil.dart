@@ -5,6 +5,7 @@ import '../main.dart';
 import 'departements.dart';
 import 'medecinSearch.dart';
 import 'medecins.dart';
+import 'specialiteComplementaire.dart';
 
 class Main extends StatefulWidget {
   const Main({Key? key}) : super(key: key);
@@ -36,7 +37,8 @@ class _Main extends State<Main> {
         },
         children: const <Widget>[
           MedecinsScreen(),
-          DepartementsScreen(),
+          MedecinSearchScreen(),
+          SpecialiteScreen(),
           PaysScreen()
         ],
       ),

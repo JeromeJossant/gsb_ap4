@@ -6,6 +6,7 @@ import 'package:gsb_ap4/model/departement.dart';
 import 'package:gsb_ap4/model/medecin.dart';
 import 'package:gsb_ap4/model/pays.dart';
 import 'package:gsb_ap4/service/service.dart';
+import 'profil.dart';
 
 
 class MedecinsDepScreen extends StatefulWidget {
@@ -39,6 +40,9 @@ class _MedecinsDepScreenState extends State<MedecinsDepScreen> {
                         itemBuilder: (context, i) {
                           return ListTile(
                             title: Text(snapshot.data![i].nom+" "+snapshot.data![i].prenom),
+                            onTap: (){
+                              Navigator.pushNamed(context,MedecinProfil.routeName, arguments: Service().getMedecinByID(snapshot.data![i].id));
+                            },
                           );
                         });
                   }}),
