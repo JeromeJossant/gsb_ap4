@@ -26,8 +26,7 @@ class _MedecinScreenState extends State<MedecinsScreen> {
             child: Text('Médecins'),
           )),
 
-      body: Card(
-        child: FutureBuilder<List<Medecin>>(
+      body: FutureBuilder<List<Medecin>>(
           future: Service().getMedecin(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
@@ -42,6 +41,8 @@ class _MedecinScreenState extends State<MedecinsScreen> {
                       title: Text(snapshot.data![i].nom +
                           " " +
                           snapshot.data![i].prenom),
+                      subtitle: Text(snapshot.data![i].adresse),
+                      leading: Icon(Icons.account_circle),
                       onTap: () {
                         Navigator.pushNamed(context,MedecinProfil.routeName, arguments: Service().getMedecinByID(snapshot.data![i].id));
                       },
@@ -50,7 +51,6 @@ class _MedecinScreenState extends State<MedecinsScreen> {
             }
           },
         ),
-      ),
     );
   }
 }

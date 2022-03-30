@@ -25,8 +25,7 @@ class _PaysDepScreenState extends State<PaysDepScreen> {
           title: Text('Départements'),
         ),
         body: Container(
-          child: Card(
-            child: FutureBuilder<List<Departement>>(
+          child: FutureBuilder<List<Departement>>(
                 future: args,
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
@@ -38,14 +37,15 @@ class _PaysDepScreenState extends State<PaysDepScreen> {
                         itemCount: snapshot.data!.length,
                         itemBuilder: (context, i) {
                           return ListTile(
-                            title: Text(snapshot.data![i].num+" - "+snapshot.data![i].nom),
+                            title: Text(snapshot.data![i].nom),
+                            subtitle: Text(snapshot.data![i].num),
+                            leading: Icon(Icons.place),
                             onTap: (){
                               Navigator.pushNamed(context, MedecinsDepScreen.routeName, arguments: Service().getMedecinByDepartement(snapshot.data![i]));
                             },
                           );
                         });
                   }}),
-          ),
         ));
   }
 }

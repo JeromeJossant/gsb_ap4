@@ -25,8 +25,7 @@ class _PaysScreenState extends State<PaysScreen> {
             color: Colors.white
         ), */),
         body: Container(
-          child: Card(
-            child: FutureBuilder<List<Pays>>(
+          child: FutureBuilder<List<Pays>>(
                 future: Service().getPays(),
                 builder: (context, snapshot) {
                   if (snapshot.data == null) {
@@ -41,6 +40,7 @@ class _PaysScreenState extends State<PaysScreen> {
                         itemBuilder: (context, i) {
                           return ListTile(
                             title: Text(snapshot.data![i].nom),
+                            leading: Icon(Icons.south_america),
                             onTap: (){
                               Navigator.pushNamed(context, PaysDepScreen.routeName, arguments: Service().getDepartementsPays(snapshot.data![i]));
 
@@ -48,7 +48,6 @@ class _PaysScreenState extends State<PaysScreen> {
                           );
                         });
                   }}),
-          ),
         ));
   }
 }

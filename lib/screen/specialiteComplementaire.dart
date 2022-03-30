@@ -25,8 +25,7 @@ class _SpecialiteScreenState extends State<SpecialiteScreen> {
             child: Text('Spécialité complémentaire'),
           )),
 
-      body: Card(
-        child: FutureBuilder<List<SpecialiteComplementaire>>(
+      body: FutureBuilder<List<SpecialiteComplementaire>>(
           future: Service().getSpecialite(),
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
@@ -39,6 +38,7 @@ class _SpecialiteScreenState extends State<SpecialiteScreen> {
                   itemBuilder: (context, i) {
                     return ListTile(
                         title: Text(snapshot.data![i].libelle),
+                        leading: Icon(Icons.analytics),
                         onTap: () {
                           Navigator.pushNamed(context, MedecinsDepScreen.routeName, arguments: Service().getMedecinBySpecialite(snapshot.data![i]));
                         }
@@ -47,7 +47,6 @@ class _SpecialiteScreenState extends State<SpecialiteScreen> {
             }
           },
         ),
-      ),
     );
   }
 }

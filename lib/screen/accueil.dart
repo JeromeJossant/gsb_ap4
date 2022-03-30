@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:gsb_ap4/main.dart';
 import 'package:gsb_ap4/screen/pays.dart';
 import '../main.dart';
-import 'departements.dart';
 import 'medecinSearch.dart';
 import 'medecins.dart';
 import 'specialiteComplementaire.dart';
@@ -44,6 +43,8 @@ class _Main extends State<Main> {
       ),
       // Bottom navigation bar
       bottomNavigationBar: BottomNavigationBar(
+        selectedItemColor: Theme.of(context).primaryColor,
+        unselectedItemColor: Colors.black45,
         currentIndex: _currentIndex,
         onTap: (index) => _pageController.jumpToPage(index),
         items: const <BottomNavigationBarItem>[
@@ -64,8 +65,6 @@ class _Main extends State<Main> {
             label: "Pays",
           ),
         ],
-        unselectedItemColor: Colors.black38,
-        backgroundColor: Colors.white,
       ),
     );
   }

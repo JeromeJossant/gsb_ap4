@@ -28,8 +28,7 @@ class _MedecinProfilState extends State<MedecinProfil> {
               color: Colors.white
           ),),
         body: Container(
-            child: Card(
-                child: FutureBuilder <Medecin>(
+            child: FutureBuilder <Medecin>(
                     future: args,
                     builder: (context, snapshot) {
                       if (snapshot.data == null) {
@@ -102,7 +101,6 @@ class _MedecinProfilState extends State<MedecinProfil> {
                       }
                     }
                 )
-            )
         )
 
     );

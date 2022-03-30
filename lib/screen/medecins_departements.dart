@@ -26,8 +26,7 @@ class _MedecinsDepScreenState extends State<MedecinsDepScreen> {
           title: Text('Liste des médecins'),
         ),
         body: Container(
-          child: Card(
-            child: FutureBuilder<List<Medecin>>(
+          child: FutureBuilder<List<Medecin>>(
                 future: args,
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
@@ -40,13 +39,14 @@ class _MedecinsDepScreenState extends State<MedecinsDepScreen> {
                         itemBuilder: (context, i) {
                           return ListTile(
                             title: Text(snapshot.data![i].nom+" "+snapshot.data![i].prenom),
+                            subtitle: Text(snapshot.data![i].adresse),
+                            leading: Icon(Icons.account_circle),
                             onTap: (){
                               Navigator.pushNamed(context,MedecinProfil.routeName, arguments: Service().getMedecinByID(snapshot.data![i].id));
                             },
                           );
                         });
                   }}),
-          ),
         ));
   }
 }

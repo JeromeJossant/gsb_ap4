@@ -18,7 +18,7 @@ class MedecinSearchScreen extends StatefulWidget {
 class _MedecinSearchScreenState extends State<MedecinSearchScreen> {
 
   TextEditingController editingController = TextEditingController();
-  var items = List<Medecin>.generate(1, (index) => Medecin(id: 0, prenom: "---", nom: "---", adresse: "---", tel: "---"));
+  var items = List<Medecin>.generate(1, (index) => Medecin(id: 0, prenom: " ", nom: " ", adresse: " ", tel: " "));
   void filterSearchResults(String query) async {
     if(query.isNotEmpty) {
       var result = await Service().getMedecinByNom(query);
@@ -44,8 +44,7 @@ class _MedecinSearchScreenState extends State<MedecinSearchScreen> {
               color: Colors.white
           ),*/ ),
         body: Container(
-          child: Card(
-            child: Column(
+          child: Column(
               children: [
                 Padding(
                   padding: const EdgeInsets.all(8.0),
@@ -72,14 +71,14 @@ class _MedecinSearchScreenState extends State<MedecinSearchScreen> {
                           onTap: () {
                             Navigator.pushNamed(context,MedecinProfil.routeName, arguments: Service().getMedecinByID(items[i].id));
                           },
-                          title: Text(items[i].id.toString()+" "+items[i].nom),
+                          title: Text(items[i].prenom + " " + items[i].nom),
+                          subtitle: Text(items[i].adresse),
                         );
 
                       }),
                 ),
               ],
             ),
-          ),
         ));
   }
 }
