@@ -32,7 +32,7 @@ class _MedecinsDepScreenState extends State<MedecinsDepScreen> {
                 builder: (context, snapshot) {
                   if (!snapshot.hasData) {
                     return const Center(
-                      child: Text('Loading...'),
+                      child: CircularProgressIndicator(),
                     );
                   } else {
                     return ListView.builder(

@@ -35,7 +35,7 @@ class _MedecinProfilState extends State<MedecinProfil> {
                       if (snapshot.data == null) {
                         return Container(
                           child: Center(
-                            child: Text('Loading...'),
+                            child: CircularProgressIndicator(),
                           ),
                         );
                       } else {
@@ -52,14 +52,14 @@ class _MedecinProfilState extends State<MedecinProfil> {
                                             style: Theme
                                                 .of(context)
                                                 .textTheme
-                                                .headline4),
+                                                .headline5),
                                         const Text(" ",
                                             style: TextStyle(fontSize: 30)),
                                         Text(snapshot.data!.nom,
                                             style: Theme
                                                 .of(context)
                                                 .textTheme
-                                                .headline4),
+                                                .headline5),
                                       ],
                                     ),
                                     Row(

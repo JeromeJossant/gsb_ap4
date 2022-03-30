@@ -39,7 +39,7 @@ class _MedecinSearchScreenState extends State<MedecinSearchScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Recherche des médecins par nom :'),
+          title: Text('Recherche'),
           /* leading: BackButton(
               color: Colors.white
           ),*/ ),
@@ -55,8 +55,8 @@ class _MedecinSearchScreenState extends State<MedecinSearchScreen> {
                     },
                     controller: editingController,
                     decoration: InputDecoration(
-                        labelText: "Search",
-                        hintText: "Search",
+                        labelText: "Saisir un nom",
+                        hintText: "Dupont",
                         prefixIcon: Icon(Icons.search),
                         border: OutlineInputBorder(
                             borderRadius:
@@ -73,8 +73,6 @@ class _MedecinSearchScreenState extends State<MedecinSearchScreen> {
                             Navigator.pushNamed(context,MedecinProfil.routeName, arguments: Service().getMedecinByID(items[i].id));
                           },
                           title: Text(items[i].id.toString()+" "+items[i].nom),
-                          /* subtitle: Text(snapshot.data[i].prenom),
-      trailing: Text(snapshot.data[i].nom),*/
                         );
 
                       }),

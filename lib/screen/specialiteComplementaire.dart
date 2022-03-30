@@ -31,7 +31,7 @@ class _SpecialiteScreenState extends State<SpecialiteScreen> {
           builder: (context, snapshot) {
             if (!snapshot.hasData) {
               return const Center(
-                child: Text('Chargement...'),
+                child: CircularProgressIndicator(),
               );
             } else {
               return ListView.builder(
