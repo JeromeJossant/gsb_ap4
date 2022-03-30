@@ -20,7 +20,7 @@ class _PaysScreenState extends State<PaysScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Liste des pays'),
+          title: Text('Pays'),
           /*  leading: BackButton(
             color: Colors.white
         ), */),

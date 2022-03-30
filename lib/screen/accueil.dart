@@ -56,8 +56,8 @@ class _Main extends State<Main> {
             label: "Recherche",
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.room),
-            label: "Département",
+            icon: Icon(Icons.analytics_outlined),
+            label: "Spécialité",
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.travel_explore),

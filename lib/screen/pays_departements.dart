@@ -22,7 +22,7 @@ class _PaysDepScreenState extends State<PaysDepScreen> {
     final args= ModalRoute.of(context)!.settings.arguments as Future<List<Departement>>;
     return Scaffold(
         appBar: AppBar(
-          title: Text('Liste des départements'),
+          title: Text('Départements'),
         ),
         body: Container(
           child: Card(

@@ -22,7 +22,7 @@ class _SpecialiteScreenState extends State<SpecialiteScreen> {
       appBar: AppBar(
 
           title: const Center(
-            child: Text('GSB - Listes des médecins'),
+            child: Text('Spécialité complémentaire'),
           )),
 
       body: Card(

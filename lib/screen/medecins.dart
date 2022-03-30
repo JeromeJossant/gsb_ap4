@@ -23,7 +23,7 @@ class _MedecinScreenState extends State<MedecinsScreen> {
       // Add from here...
       appBar: AppBar(
           title: const Center(
-            child: Text('GSB - Listes des médecins'),
+            child: Text('Médecins'),
           )),
 
       body: Card(

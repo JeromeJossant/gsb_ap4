@@ -20,7 +20,7 @@ class _DepartementsScreenState extends State<DepartementsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Liste des départements'),
+          title: Text('Départements'),
         ),
         body: Container(
           child: Card(
